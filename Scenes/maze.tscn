@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://cqd5mknwub4d" path="res://Scenes/maze.gd" id="1_aiyge"]
 [ext_resource type="PackedScene" uid="uid://quhkk6eycbbx" path="res://Elements/Player/player.tscn" id="2_aiyge"]
-[ext_resource type="PackedScene" uid="uid://wmp1atbixl2g" path="res://Elements/Wall/wall.tscn" id="3_bbt2e"]
 [ext_resource type="Texture2D" uid="uid://c2neeydsjyqcg" path="res://Assets/tilesheet_complete.png" id="4_4lq1w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bjn2b"]
@@ -289,23 +288,3 @@ tile_set = SubResource("TileSet_4kxuq")
 
 [node name="Player" parent="." unique_id=2079830626 instance=ExtResource("2_aiyge")]
 position = Vector2(352, 288)
-
-[node name="Wall" parent="." unique_id=1663272027 instance=ExtResource("3_bbt2e")]
-visible = false
-position = Vector2(224, 224)
-
-[node name="Wall2" parent="." unique_id=204382795 instance=ExtResource("3_bbt2e")]
-visible = false
-position = Vector2(256, 224)
-
-[node name="Wall3" parent="." unique_id=831245482 instance=ExtResource("3_bbt2e")]
-visible = false
-position = Vector2(288, 224)
-
-[node name="Wall4" parent="." unique_id=996684999 instance=ExtResource("3_bbt2e")]
-visible = false
-position = Vector2(320, 224)
-
-[node name="Wall5" parent="." unique_id=359454990 instance=ExtResource("3_bbt2e")]
-visible = false
-position = Vector2(320, 256)
