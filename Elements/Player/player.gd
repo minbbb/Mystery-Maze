@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const TILE_SIZE := 64
 const MOVE_SPEED := 500.0
+const BEDROCK_PHYSIC_LAYER = 1
 var target_position: Vector2
 var moving := false
 var hidden_tiles := {}
@@ -46,7 +47,11 @@ func _physics_process(delta):
 func hide_tile(cell: Vector2i, duration: float):
 	if hidden_tiles.has(cell):
 		return
-		
+	
+	print($"../TileMapLayer".get_cell_tile_data(cell).get_collision_polygons_count(BEDROCK_PHYSIC_LAYER))
+	if $"../TileMapLayer".get_cell_tile_data(cell).get_collision_polygons_count(BEDROCK_PHYSIC_LAYER) >= 1:
+		return
+	
 	hidden_tiles[cell] = {
 		"source_id": $"../TileMapLayer".get_cell_source_id(cell),
 		"atlas_coords": $"../TileMapLayer".get_cell_atlas_coords(cell),
