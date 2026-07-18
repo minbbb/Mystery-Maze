@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bykpu44ww5td8"]
+
+[ext_resource type="PackedScene" uid="uid://cqkog0aisiyxh" path="res://Elements/Enemies/enemy.tscn" id="1_n6ftj"]
+[ext_resource type="Script" uid="uid://clnygcv5vmal7" path="res://Elements/Enemies/Rat/rat.gd" id="2_3i2ip"]
+[ext_resource type="Texture2D" uid="uid://bl2p44ioqynw2" path="res://Assets/rat.png" id="3_fuyhh"]
+
+[node name="Rat" unique_id=365563956 instance=ExtResource("1_n6ftj")]
+script = ExtResource("2_3i2ip")
+
+[node name="Sprite2D" parent="." index="0" unique_id=1669026288]
+scale = Vector2(4, 4)
+texture = ExtResource("3_fuyhh")
+
+[node name="Timer" parent="." index="3" unique_id=1265710094]
+wait_time = 0.5

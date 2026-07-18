@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://dl0ke6w7u006p" path="res://Elements/Player/player.gd" id="1_a3htu"]
 [ext_resource type="Texture2D" uid="uid://b1o07mautlx2r" path="res://icon.svg" id="1_l8h54"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4kxuq"]
-radius = 16.0
-height = 32.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbt2e"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lq1w"]
+size = Vector2(32, 32)
 
 [node name="Player" type="CharacterBody2D" unique_id=2079830626]
-collision_mask = 4
+collision_mask = 14
 script = ExtResource("1_a3htu")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=394454765]
@@ -16,15 +18,16 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_l8h54")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1521127046]
-collision_mask = 4
+collision_mask = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=385451249]
-shape = SubResource("CapsuleShape2D_4kxuq")
+shape = SubResource("RectangleShape2D_bbt2e")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=598733683]
-shape = SubResource("CapsuleShape2D_4kxuq")
+shape = SubResource("RectangleShape2D_4lq1w")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1080120793]
 collision_mask = 12
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
